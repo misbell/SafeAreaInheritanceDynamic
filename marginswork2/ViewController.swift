@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
+    var aView = UIView()
     
     
     @IBAction func animateContainerView(_ sender: Any) {
@@ -32,6 +33,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        aView.frame = UIScreen.main.applicationFrame
+        aView.backgroundColor = .purple
+        self.view.addSubview(aView)
+        
         
         var newSafeArea = UIEdgeInsets()
         newSafeArea.left = 50.0
@@ -40,8 +45,8 @@ class ViewController: UIViewController {
         newSafeArea.bottom = 20.0
         
         self.additionalSafeAreaInsets = newSafeArea
+ 
 
-        
         
     }
     
@@ -50,6 +55,9 @@ class ViewController: UIViewController {
         let mainviewx =  self.view.safeAreaInsets
         let mainviewy = self.view.safeAreaLayoutGuide
 
+        let purpleviewx =  self.aView.safeAreaInsets
+        let purpleviewy = self.aView.safeAreaLayoutGuide
+        
         let containerx = self.containerView.safeAreaInsets
         let containery = self.containerView.safeAreaLayoutGuide
         
@@ -68,6 +76,18 @@ class ViewController: UIViewController {
         print ("===")
         print ("mainviewy")
         print (mainviewy)
+        
+        
+        print ("***")
+        
+        print ("purpleviewx")
+        print (purpleviewx)
+        print ("===")
+        print ("purpleviewy")
+        print (purpleviewy)
+        
+        
+        
 
         print ("***")
         print ("containerx")

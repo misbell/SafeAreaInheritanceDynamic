@@ -11,11 +11,18 @@ import UIKit
 class ViewController2: UIViewController {
 
     @IBOutlet weak var whiteView: UIView!
+     var aView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .blue
  
+       
+        aView.frame = UIScreen.main.applicationFrame
+        aView.backgroundColor = .yellow
+        self.view.addSubview(aView)
+        
 
 
         // Do any additional setup after loading the view.
@@ -38,6 +45,9 @@ class ViewController2: UIViewController {
         
         let bluex = self.view.safeAreaInsets
         let bluey = self.view.safeAreaLayoutGuide
+        let yellowviewx =  self.aView.safeAreaInsets
+        let yellowviewy = self.aView.safeAreaLayoutGuide
+        
         
         print ("***")
         print ("bluex")
@@ -45,6 +55,14 @@ class ViewController2: UIViewController {
         print ("===")
         print ("bluey")
         print (bluey)
+        
+        
+        print ("***")
+        print ("yellowviewx")
+        print (yellowviewx)
+        print ("===")
+        print ("yellowviewy")
+        print (yellowviewy)
         
     }
 
